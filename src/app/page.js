@@ -5,6 +5,8 @@ export default function Home() {
     <>
       <h2>Welcome</h2>
       Hello, WEB!
+      <br/>
+      <img src="/newton_image.png"></img>
     </>
   );
 }
