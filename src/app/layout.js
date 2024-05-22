@@ -13,7 +13,8 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   // 서버컴퍼넌트는 서버쪽에서 fetch메소드 실행 끝날 때까지 await, 끝나면 json으로 바뀜
   // 용량이 적어지고, 같은 서버일 경우 빠르게 이동작이 끝남. 
-  const resp = await fetch('http://localhost:9999/topics'); 
+  //  {next: {revalidate: 0} = { cache: "no-store"}
+  const resp = await fetch('http://localhost:9999/topics', { cache: "no-store" }); 
   const topics = await resp.json();
   return (
     <html >

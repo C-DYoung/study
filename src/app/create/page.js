@@ -28,6 +28,7 @@ export default function Create() {
                     const lastid = result.id;
                     // 리디렉션
                     router.push(`/read/${lastid}`);
+                    router.refresh();
                 })
         }}>
             <p>
