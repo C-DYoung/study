@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Control } from "./Control";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,12 +26,8 @@ export default async function RootLayout({ children }) {
             return <li key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
           })}
         </ol>
-        {children}
-        <ul>
-          <li><Link href="/create">Create</Link></li>
-          <li><Link href="/update">Update</Link></li>
-          <li><input type="button" value="delete" /></li>
-        </ul>
+          {children}
+          <Control />
       </body>
     </html>
   );
